@@ -1,3 +1,3 @@
 # Test
 
-Environment：ubuntu+vscode+make+gcc
+环境：ubuntu+vscode+make+gcc
