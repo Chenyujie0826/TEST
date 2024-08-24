@@ -1,5 +1,7 @@
-main:main.c
-	gcc main.c -o test.out -lm
+CC=g++
+
+test.out:main.cpp
+	$(CC) main.cpp -o test.out
 
 clean:
-	rm main
+	rm test.out

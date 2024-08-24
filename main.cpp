@@ -24,12 +24,11 @@ float average(int n, int a[])
     {
         b += a[i];
     }
-    return b / (n+0.0);
+    return b / (n + 0.0);
 }
 
 float median(int n, int a[])
 {
-    sort(a, n);
     if (n % 2)
         return a[(n - 1) / 2];
     else
@@ -43,13 +42,17 @@ float variance(int n, int a[], float x)
     {
         b += (a[i] - x) * (a[i] - x);
     }
-    return b / (n+0.0);
+    return b / (n + 0.0);
 }
 
 float range(int n, int a[])
 {
-    sort(a, n);
     return a[n - 1] - a[0];
+}
+
+void mode(int a[], int b[])
+{
+    //TODO
 }
 
 int main()
@@ -67,6 +70,8 @@ int main()
         scanf("%d", &a[i]);
     }
 
+    sort(a, n);
+
     float x = average(n, a);
     printf("平均数:%f\n", x);
 
@@ -78,6 +83,20 @@ int main()
     printf("标准差:%f\n", sqrt(y));
 
     printf("极差:%f\n", range(n, a));
+
+    int b[n];
+    for (int i = 0; i < n; i++)
+    {
+        b[i] = -2147483648;
+    }
+    mode(b, a);
+    printf("众数:");
+    for (int i = 0; i < n; i++)
+    {
+        if (b[i] != -2147483648)
+            printf("%d ", b[i]);
+    }
+    printf("\n");
+
     return 0;
 }
-
