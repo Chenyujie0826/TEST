@@ -1,62 +1,11 @@
-#include <stdio.h>
-#include <math.h>
-
-void sort(int arr[], int sz)
-{
-    for (int i = 0; i < sz - 1; i++)
-    {
-        for (int j = 0; j < sz - 1 - i; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}
-
-float average(int n, int a[])
-{
-    int b = 0;
-    for (int i = 0; i < n; i++)
-    {
-        b += a[i];
-    }
-    return b / (n + 0.0);
-}
-
-float median(int n, int a[])
-{
-    if (n % 2)
-        return a[(n - 1) / 2];
-    else
-        return (a[n / 2] + a[n / 2 - 1]) / 2.0;
-}
-
-float variance(int n, int a[], float x)
-{
-    int b = 0;
-    for (int i = 0; i < n; i++)
-    {
-        b += (a[i] - x) * (a[i] - x);
-    }
-    return b / (n + 0.0);
-}
-
-float range(int n, int a[])
-{
-    return a[n - 1] - a[0];
-}
-
-void mode(int a[], int b[])
-{
-    //TODO
-}
+#include <bits/stdc++.h>
+#include "T.h"
+using namespace std;
+using namespace Test;
 
 int main()
 {
+    Tool t;
     printf("*统计计算器*\n");
 
     printf("数据个数:");
@@ -70,26 +19,26 @@ int main()
         scanf("%d", &a[i]);
     }
 
-    sort(a, n);
+    t.sort(a, n);
 
-    float x = average(n, a);
+    float x = t.average(n, a);
     printf("平均数:%f\n", x);
 
-    printf("中位数:%f\n", median(n, a));
+    printf("中位数:%f\n", t.median(n, a));
 
-    float y = variance(n, a, x);
+    float y = t.variance(n, a, x);
     printf("方差:%f\n", y);
 
     printf("标准差:%f\n", sqrt(y));
 
-    printf("极差:%f\n", range(n, a));
+    printf("极差:%f\n", t.range(n, a));
 
     int b[n];
     for (int i = 0; i < n; i++)
     {
         b[i] = -2147483648;
     }
-    mode(b, a);
+    t.mode(b, a);
     printf("众数:");
     for (int i = 0; i < n; i++)
     {
