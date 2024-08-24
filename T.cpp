@@ -2,7 +2,7 @@
 
 Test::Tool::Tool()
 {
-    
+    //TODO
 }
 
 void Test::Tool::sort(int arr[], int sz)
@@ -58,4 +58,9 @@ void Test::Tool::mode(int a[], int b[])
 {
     //TODO
     
+}
+
+Test::Tool::~Tool()
+{
+    //TODO
 }

@@ -12,5 +12,6 @@ namespace Test
         float variance(int n, int a[], float x);
         float range(int n, int a[]);
         void mode(int a[], int b[]);
+        ~Tool();
     };
 }
