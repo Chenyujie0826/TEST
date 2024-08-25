@@ -3,15 +3,15 @@ namespace Test
     class Tool
     {
     private:
-        //TODO
+        int *arr;
+        int n;
     public:
-        Tool();
-        void sort(int arr[], int sz);
-        float average(int n, int a[]);
-        float median(int n, int a[]);
-        float variance(int n, int a[], float x);
-        float range(int n, int a[]);
-        void mode(int a[], int b[]);
+        Tool(int b[],int c);
+        float average();
+        float median();
+        float variance(float x);
+        float range();
+        void mode(int b[]);
         ~Tool();
     };
 }

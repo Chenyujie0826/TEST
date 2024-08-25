@@ -1,15 +1,17 @@
 #include "T.h"
 
-Test::Tool::Tool()
+Test::Tool::Tool(int b[],int c)
 {
-    //TODO
-}
-
-void Test::Tool::sort(int arr[], int sz)
-{
-    for (int i = 0; i < sz - 1; i++)
+    this->n=c;
+    this->arr=new int [this->n];
+    for (int i = 0; i < this->n; i++)
     {
-        for (int j = 0; j < sz - 1 - i; j++)
+        arr[i]=b[i];
+    }
+
+    for (int i = 0; i < this->n - 1; i++)
+    {
+        for (int j = 0; j < this->n - 1 - i; j++)
         {
             if (arr[j] > arr[j + 1])
             {
@@ -21,40 +23,40 @@ void Test::Tool::sort(int arr[], int sz)
     }
 }
 
-float Test::Tool::average(int n, int a[])
+float Test::Tool::average()
 {
     int b = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < this->n; i++)
     {
-        b += a[i];
+        b += this->arr[i];
     }
-    return b / (n + 0.0);
+    return b / (this->n + 0.0);
 }
 
-float Test::Tool::median(int n, int a[])
+float Test::Tool::median()
 {
-    if (n % 2)
-        return a[(n - 1) / 2];
+    if (this->n % 2)
+        return this->arr[(this->n - 1) / 2];
     else
-        return (a[n / 2] + a[n / 2 - 1]) / 2.0;
+        return (this->arr[this->n / 2] + this->arr[this->n / 2 - 1]) / 2.0;
 }
 
-float Test::Tool::variance(int n, int a[], float x)
+float Test::Tool::variance(float x)
 {
     int b = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < this->n; i++)
     {
-        b += (a[i] - x) * (a[i] - x);
+        b += (this->arr[i] - x) * (this->arr[i] - x);
     }
-    return b / (n + 0.0);
+    return b / (this->n + 0.0);
 }
 
-float Test::Tool::range(int n, int a[])
+float Test::Tool::range()
 {
-    return a[n - 1] - a[0];
+    return this->arr[this->n - 1] - this->arr[0];
 }
 
-void Test::Tool::mode(int a[], int b[])
+void Test::Tool::mode(int b[])
 {
     //TODO
     
@@ -62,5 +64,5 @@ void Test::Tool::mode(int a[], int b[])
 
 Test::Tool::~Tool()
 {
-    //TODO
+    //不需要写
 }

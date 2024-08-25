@@ -5,7 +5,6 @@ using namespace Test;
 
 int main()
 {
-    Tool t;
     printf("*统计计算器*\n");
 
     printf("数据个数:");
@@ -19,26 +18,26 @@ int main()
         scanf("%d", &a[i]);
     }
 
-    t.sort(a, n);
+    Tool t(a,n);
 
-    float x = t.average(n, a);
+    float x = t.average();
     printf("平均数:%f\n", x);
 
-    printf("中位数:%f\n", t.median(n, a));
+    printf("中位数:%f\n", t.median());
 
-    float y = t.variance(n, a, x);
+    float y = t.variance(x);
     printf("方差:%f\n", y);
 
     printf("标准差:%f\n", sqrt(y));
 
-    printf("极差:%f\n", t.range(n, a));
+    printf("极差:%f\n", t.range());
 
     int b[n];
     for (int i = 0; i < n; i++)
     {
         b[i] = -2147483648;
     }
-    t.mode(b, a);
+    t.mode(b);
     printf("众数:");
     for (int i = 0; i < n; i++)
     {
