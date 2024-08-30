@@ -64,5 +64,5 @@ void Test::Tool::mode(int b[])
 
 Test::Tool::~Tool()
 {
-    //不需要写
+    delete this->arr;
 }
