@@ -59,7 +59,6 @@ float Test::Tool::range()
 void Test::Tool::mode(int b[])
 {
     //TODO
-    
 }
 
 Test::Tool::~Tool()
